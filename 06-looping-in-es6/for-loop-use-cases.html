@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>for loop</title>
+</head>
+<body>
+        <span> Hello ES6 DEvs</span>
+        <span> Hello ES6 DEvs</span>
+        <span> Hello ES6 DEvs</span>
+        <span> Hello ES6 DEvs</span>
+        <span> Hello ES6 DEvs</span>
+    <script>
+        const friends = ['Jane', 'Doe', 'John', 'Smith'];
+        for (const [i, f] of friends.entries()) {
+            console.log(`key: ${i} value: ${f}`);
+        }
+
+
+        function sum() {
+            let total = 0
+            for (let n of arguments) {
+                total += n;
+            }
+            console.log(total);
+        }
+
+        sum(1, 2, 43, 5, 56, 6);
+
+
+        const greetMsg = 'Welcome to ES6 Course';
+        for(const ch of greetMsg ){
+            console.log(ch);
+        }
+
+    const spanList = document.querySelectorAll('span');
+    for(const span of spanList){
+        span.addEventListener('click', () => console.log('Hello world'));
+    }
+
+    </script>
+</body>
+
+</html>

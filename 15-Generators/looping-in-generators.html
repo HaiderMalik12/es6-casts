@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Generators</title>
+</head>
+
+<body>
+    <script>
+        function* greetMessages(){
+         yield 'Hello';
+         yield 'Welcome to ES6';
+         yield 'Yo man';
+         yield 'You are amazing';
+         yield 'Thats Cool!'
+        };
+
+       const greets = greetMessages();
+       for(let msg of greets){
+           console.log(msg);
+       }
+
+
+    </script>
+</body>
+
+</html>

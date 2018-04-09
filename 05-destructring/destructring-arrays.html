@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Destructring</title>
+</head>
+
+<body>
+
+    <script>
+        const data = ['John', 'Smith', 1, 24];
+        const [firstName, lastName, id, age] = data;
+
+        const text= '12,34,1,new york';
+        const [lon, lat, weatherId, city] = text.split(',');
+
+        const persons = ['John', 'Smith', 'Haider','Ali', 'Jane'];
+        const [manager, accountant, ...developers] = persons;
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Promises</title>
+</head>
+
+<body>
+    <script>
+        const weather = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve({
+                    tmp: 12,
+                    conditions: 'Cool'
+                })
+            }, 2000)
+        });
+
+        const tweets = new Promise((resolve) => {
+            setTimeout(() => {
+                resolve(['Welcome to ES6 Course'])
+            })
+        }, 700);
+
+        Promise.all([weather, tweets])
+            .then(results => {
+                const [weather, tweets] = results;
+                console.log(weather);
+                console.log(tweets)
+            })
+            .catch(err => console.error(err));
+    </script>
+</body>
+
+</html>

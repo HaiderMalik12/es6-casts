@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Promises</title>
+</head>
+
+<body>
+    <script>
+        const usersPromise = fetch('https://reqres.in/api/users?page=2');
+        const empPromises = fetch('http://dummy.restapiexample.com/api/v1/employees');
+
+
+        Promise.all([usersPromise, empPromises])
+            .then(results => {
+                return Promise.all(results.map(data => data.json()))
+            })
+            .then(responses => {
+                console.log(responses)
+            })
+            .catch(err => {
+                console.error(err);
+            })
+    </script>
+</body>
+
+</html>

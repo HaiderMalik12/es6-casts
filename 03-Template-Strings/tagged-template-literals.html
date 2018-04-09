@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>tagged template literals</title>
+</head>
+
+<style>
+    span {
+        background-color: yellow;
+    }
+</style>
+
+<body>
+    <script>
+        function highlight(strings, ...values) {
+            debugger;
+            let str = '';
+            strings.forEach((string, i) => {
+                str += `${string} <span> ${(values[i] || '')}</span>`
+            });
+            return str;
+        }
+        const firstName = 'John';
+        const lastName = 'Smith';
+        const mobile = `0343294234`;
+        const email = 'jane@gmail.com';
+        const greetMsg = highlight`Welcome to ES6 course ${firstName} ${lastName}
+        Contact: ${mobile}
+        You will receive email ${email}`;
+        document.body.innerHTML = greetMsg;
+    </script>
+</body>
+
+</html>

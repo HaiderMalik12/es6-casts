@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Understanding this as global object</title>
+</head>
+
+<body>
+    <script>
+     function test(){
+         return this.name;
+     }
+     var greet ={
+         name: 'John'
+     };
+     console.log(test.call(greet));
+    </script>
+</body>
+
+</html>

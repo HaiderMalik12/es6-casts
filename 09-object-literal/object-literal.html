@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Object Literal</title>
+</head>
+
+<body>
+    <script>
+        const first = 'Snickers';
+        const last = 'bos';
+        const age = 24;
+        const phone = '048334333';
+
+        const person = {
+            firstName: first,
+            last,
+            age,
+            phone,
+        };
+
+        const ProductController = {
+            create(req, res) {
+
+            },
+            update(req, res) {
+
+            },
+            delete(req, res) {
+
+            }
+        };
+
+
+        const propName = 'code';
+        const value = 'Udemy Course'
+        let params = {
+            [propName]: true,
+            [`data${propName.toUpperCase()}`]: true,
+            [`${propName}_Udemy`]: value
+        }
+
+        function objectify(key, value) {
+            return {
+                [key]: value
+            }
+        }
+
+        const personObj = objectify('name', 'John');
+
+    </script>
+</body>
+
+</html>

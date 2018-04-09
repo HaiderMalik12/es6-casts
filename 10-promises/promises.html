@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Promises</title>
+</head>
+
+<body>
+    <script>
+        console.log('fetching employees data');
+        fetch('http://dummy.restapiexample.com/api/v1/employees')
+            .then(data => data.json())
+            .then(employees => console.log(employees))
+            .catch(err => {
+                console.error(err);
+            })
+
+    </script>
+</body>
+
+</html>

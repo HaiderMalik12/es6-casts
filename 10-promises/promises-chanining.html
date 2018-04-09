@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Promises</title>
+</head>
+
+<body>
+    <script>
+        const posts = [
+            { title: 'NodeJs', id: 1, authorId: 1 },
+            { title: 'GraphQL', id: 2, authorId: 2 },
+            { title: 'Koa', id: 3, authorId: 3 },
+            { title: 'Express', id: 4, authorId: 4 },
+            { title: 'Sails', id: 5, authorId: 5 },
+            { title: 'MongoDB', id: 6, authorId: 6 },
+            { title: 'Javascriopt', id: 7, authorId: 7 },
+        ]
+        const authors = [
+            { name: 'Smith', id: 1, },
+            { name: 'David', id: 2 },
+            { name: 'Kevin', id: 3, },
+            { name: 'Clark', id: 4, },
+            { name: 'Kely', id: 5, },
+            { name: 'Jane', id: 6 },
+        ];
+
+        function getPostById(id) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    const post = posts.find(post => post.id === id);
+                    if (post) {
+                        resolve(post);
+                    }
+                    else {
+                        reject(Error('No post found'))
+                    }
+                }, 1000)
+            })
+        }
+
+        function getAuthor(post) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    const author = authors.find(author => post.authorId === author.id);
+                    if (author) {
+                        resolve(author);
+                    }
+                    else {
+                        reject(Error('No Author found'))
+                    }
+                }, 1000)
+            });
+        }
+
+        getPostById(3)
+            .then(post => {
+                debugger;
+                return getAuthor(post);
+            })
+            .then(author => {
+                console.log(author)
+            })
+            .catch(err => console.error(err));
+
+    </script>
+</body>
+
+</html>

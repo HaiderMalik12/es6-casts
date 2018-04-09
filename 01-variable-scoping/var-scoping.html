@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>var scoping</title>
+</head>
+
+<body>
+    <script>
+      function greet(){
+          var msg = 'Hello world';
+          console.log(msg);
+      }
+      greet();
+      var language = 'en';
+      if(language === 'en'){
+          const greetMsg = 'Hello world in English';
+      }
+    </script>
+</body>
+
+</html>

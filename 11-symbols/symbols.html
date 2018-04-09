@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Symbols</title>
+</head>
+
+<body>
+    <script>
+        const person = Symbol('Haider');
+        const employee = Symbol('Employye');
+
+        const data = {
+            [Symbol('John')]: {
+                age: 20,
+                phone: '123123123'
+            },
+            [Symbol('John')]: {
+                age: 30,
+                phone: '12312333123'
+            },
+            [Symbol('John')]: {
+                age: 34,
+                phone: '3123123123'
+            }
+        }
+
+        const syns = Object.getOwnPropertySymbols(data);
+        const results = syns.map(s => data[s]);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Generators</title>
+</head>
+
+<body>
+    <script>
+        function* listContacts(){
+            yield 'Haider';
+            yield 'Jane';
+            yield 'John';
+            yield 'Maria';
+        }
+        const contacts = listContacts();
+
+        const persons = [{id: 1, name: 'Jane'},{id: 2, name: 'John'}];
+
+        function* loop(arr){
+            for(let p of persons){
+                yield p;
+            }
+        }
+        const personGen =loop(persons);
+    </script>
+</body>
+
+</html>

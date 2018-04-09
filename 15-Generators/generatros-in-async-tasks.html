@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Generators</title>
+</head>
+
+<body>
+    <script>
+
+       function networkRequest(url){
+        fetch(url).then(data => data.json()).then(data => dataGen.next(data))
+        }
+        function* asyncTasks() {
+            console.log('fetching beers');
+            const beers = yield networkRequest('http://api.react.beer/v2/search?q=hops&type=beer');
+            console.log(beers);
+
+            console.log('fetching haider');
+            const haider = yield networkRequest('https://api.github.com/users/haidermalik12');
+            console.log(haider);
+
+            console.log('fetching Joe');
+            const joe = yield networkRequest('https://api.discogs.com/artists/51988');
+            console.log(joe);
+        }
+
+        const dataGen = asyncTasks();
+        dataGen.next(); //start the generator
+
+    </script>
+</body>
+
+</html>

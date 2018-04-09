@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Proxies</title>
+</head>
+
+<body>
+    <script>
+
+   let handler ={
+       set(target, name, value){
+           debugger;
+           if(name === 'age'){
+               if(!Number.isInteger(value)){
+                   throw new TypeError('The age must be integer');
+               }
+               if(value >  200){
+                   throw new RangeError('The age seems invalid');
+               }
+           }
+           target[name] = value;
+           return true;
+       }
+   }
+   let person = new Proxy({}, handler);
+//    person.age = 100;
+//    person.age = 20;
+//    person.age = 300;
+
+    </script>
+</body>
+
+</html>

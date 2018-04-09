@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Spread and Rest</title>
+</head>
+
+<body>
+
+    <div class="person">
+        <p>John</p>
+        <p>Smith</p>
+        <p>Sane</p>
+        <p>Kevin</p>
+    </div>
+    <script>
+        const person = [...document.querySelectorAll('.person p')];
+
+        const product = {
+            name: 'Iphone',
+            categories: [
+                'Mobile',
+                'Laptop',
+                'PC',
+                'Mac',
+                'iMac'
+            ]
+        }
+        const categoryList = ['categoryX', 'categoryY', ...product.categories];
+
+    </script>
+</body>
+
+</html>

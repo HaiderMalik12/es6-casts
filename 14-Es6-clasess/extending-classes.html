@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ES6 Classes</title>
+</head>
+
+<body>
+    <script>
+     class Person{
+         constructor(name, age){
+             this.name = name;
+             this.age= age;
+         }
+         greet(){
+             return `Hello ${this.name}`;
+         }
+         static info(){
+             return 'Information'
+         }
+         get getName(){
+             return this.name
+         }
+         set setName(value){
+             this.name = value;
+         }
+         get getAge(){
+             return this.age;
+         }
+         set setAge(value){
+             this.age = value
+         }
+     }
+
+    class Developer extends Person{
+        constructor(name, age,projects){
+         super(name, age)
+         this.projects = projects;
+        }
+        get getProject(){
+            return this.projects;
+        }
+        set setProjects(values){
+            this.projects = [...values];
+        }
+    }
+     const haider = new Person('Haider', 23);
+     const john = new Person('John', 12);
+
+     //
+     const jane = new Developer('Jane', 22, [{id: 1,  name: 'ES6 Project'}])
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Destructring</title>
+</head>
+<body>
+
+<script>
+const person = {
+    first: 'War',
+    last: 'Hader',
+    country: 'Candida',
+    city: 'Hanker',
+    twitter: '@hadiermalik504'
+};
+let {first, last, country, city, twitter} = person;
+
+const friend = {
+    name: 'Jane',
+    address: {
+        city: 'Dsad',
+        zip : 12233,
+        location:{
+            lat: '2123',
+            lon: '12312'
+        }
+    }
+}
+const {lat, lon} = friend.address.location;
+const {lat: lattitude, lon: longitude} = friend.address.location;
+
+const pagination = {
+    perPage: 20,
+    query: 'name'
+};
+
+const {page=2, perPage= 10 , query='name', sort ='DSC', sortDir = 'id'} = pagination;
+</script>
+</body>
+</html>

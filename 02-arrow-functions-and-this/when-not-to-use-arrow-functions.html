@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>When not to use arrow functions</title>
+</head>
+
+<body>
+    <script>
+        const counter = {
+            increments: 10,
+            score() {
+                console.log(this);
+                this.increments++;
+            }
+        }
+
+
+       ///
+        class Person {
+            constructor(firstName, lastName) {
+                this.firstName = firstName
+                this.lastName = lastName
+            }
+        }
+        Person.prototype.fullName = function() {
+            console.log(this)
+            return `FullName: ${this.firstName} ${this.lastName}`;
+        }
+        const person1 = new Person('Smith', 'Hane');
+        const person2 = new Person('Jnas', ' asdsda');
+
+    </script>
+</body>
+
+</html>

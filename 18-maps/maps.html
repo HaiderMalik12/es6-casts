@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Maps</title>
+</head>
+
+<body>
+    <script>
+    const statuses = new Map();
+    statuses.set('ACTIVE', 1);
+    statuses.set('INACTIVE', 0);
+    statuses.set('DELETE',3);
+
+    statuses.forEach((val, key) => console.log( key,val))
+
+    for(let [key, value] of statuses){
+        console.log(key, value);
+    }
+
+    </script>
+</body>
+
+</html>

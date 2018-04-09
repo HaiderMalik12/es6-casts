@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Using Html with Template Strings</title>
+</head>
+
+<body>
+    <script>
+        const person = {
+            firstName: 'Jane',
+            lastName: 'Smith'
+        };
+        const markup = `
+         <div>
+          <h2>${person.firstName} ${person.lastName} </h2>
+         </div>
+        `
+        const persons = [
+            { firstName: 'Haider', lastName: 'malik' },
+            { firstName: 'Swag', lastName: 'malaik' },
+            { firstName: 'John', lastName: 'Smith' }
+        ];
+        const renderPersons = function(persons){
+            return(
+                `${persons.map(p => `
+                <li>
+                ${p.firstName} ${p.lastName}
+                </li>
+                ` ).join('')}`
+            );
+        }
+        const markup1 = `
+         <ul>
+         ${renderPersons(persons)}
+         </ul>
+        `
+        document.body.innerHTML = markup1;
+    </script>
+</body>
+
+</html>

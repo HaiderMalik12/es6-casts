@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Proxies</title>
+</head>
+
+<body>
+    <script>
+      const person ={
+          name: 'Haider',
+          age :20
+      }
+
+      const p = new Proxy(person, {
+          get(target, name){
+              return name in target ?
+                    target[name] :
+                    'Key does not exist'
+          }
+      });
+      console.log(p.name);
+      console.log(p.age);
+      console.log(p.cninc);
+    </script>
+</body>
+
+</html>

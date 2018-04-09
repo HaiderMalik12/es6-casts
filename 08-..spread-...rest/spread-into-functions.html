@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Spread and Rest</title>
+</head>
+
+<body>
+    <script>
+        const oldBanks = ['US', 'EE', 'NM', 'KN'];
+        const newBanks = ['PK', 'IN'];
+        newBanks.push(...oldBanks);
+
+
+        const names = ['Jane', 'Doe']
+        function greetMsg(first, last) {
+            alert(`First ${first} Last ${last}`);
+        }
+        greetMsg(...names)
+
+
+    </script>
+</body>
+
+</html>

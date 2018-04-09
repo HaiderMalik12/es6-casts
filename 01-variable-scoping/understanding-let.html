@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>var scoping</title>
+</head>
+
+<body>
+    <script>
+     let greetMsg = 'Hello world';
+     let language = 'en';
+
+     if(language  === 'en'){
+         let greetMsg = 'Welcome to ES6';
+         console.log(greetMsg);
+     }
+     console.log(greetMsg);
+
+    </script>
+</body>
+
+</html>

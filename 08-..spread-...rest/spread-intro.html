@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Spread and Rest</title>
+</head>
+
+<body>
+
+    <script>
+        let persons = [];
+        const managers = ['Haider', 'malik', 'Ali', 'Grant'];
+        const developers = ['dev1', 'dev2', 'devcitch'];
+        persons = [...managers, ...developers];
+        // persons = persons.concat(managers);
+        // persons = persons.concat(developers);
+        // persons.push('Kevin');
+
+        //copy array
+        // const copiedPersons = persons;
+        const copiedPersons = [...persons];
+    </script>
+</body>
+
+</html>

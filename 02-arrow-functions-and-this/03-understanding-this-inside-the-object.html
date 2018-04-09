@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>this inside the object</title>
+</head>
+
+<body>
+    <script>
+        var person = {
+            firstName: 'John',
+            lastName: 'Smith',
+            fullName: function () {
+                console.log(this.firstName + ' ' + this.lastName);
+            },
+            ownner: {
+                firstName: 'Alex',
+                lastName: 'Hales',
+                fullName: function () {
+                    console.log(this.firstName + ' ' + this.lastName);
+                },
+            }
+        }
+        person.fullName();
+        person.ownner.fullName();
+    </script>
+</body>
+
+</html>

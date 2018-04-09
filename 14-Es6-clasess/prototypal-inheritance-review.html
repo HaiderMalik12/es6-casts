@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Es6 Classes</title>
+</head>
+
+<body>
+    <script>
+     function Person(name, age){
+         this.name = name;
+         this.age = age;
+     }
+     Person.prototype.greet = function(){
+         console.log(`Hello ${this.name}`);
+     }
+     Person.prototype.getName = function(){
+         return this.name;
+     }
+     const person = new Person('John', 23);
+     const person2 = new Person('Jane', 12);
+    </script>
+</body>
+
+</html>

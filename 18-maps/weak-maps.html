@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Maps</title>
+</head>
+
+<body>
+    <script>
+    let person1 = {name: 'Haider'};
+    let person2 = { name: 'Jane'};
+
+    const weak = new WeakMap();
+    const strong = new Map();
+
+    weak.set(person1,' sad');
+    strong.set(person2, 'asd');
+
+    person1 = null;
+    person2 = null
+
+
+    </script>
+</body>
+
+</html>

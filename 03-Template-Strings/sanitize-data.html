@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sanitize-data</title>
+</head>
+<body>
+
+  <div class="about">
+
+  </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/0.8.2/purify.min.js"></script>
+<script>
+  function sanitize(strings, ...values) {
+    // debugger;
+    const dirty = strings.reduce((prev, next, i) => `${prev}${next}${values[i] || ''}`, '');
+    return DOMPurify.sanitize(dirty);
+  }
+
+  const aboutMe = `Beautiful pics <img src="http://unsplash.it/100/100?random" onload="alert('Bad Stuff!');" />`;
+  const random = '<a href= "http://www.google.com">Google</a>';
+  const html = sanitize`
+    <p>${aboutMe}</p>
+    ${random}
+  `;
+
+  const about = document.querySelector('.about');
+  about.innerHTML = html;
+</script>
+</body>
+</html>

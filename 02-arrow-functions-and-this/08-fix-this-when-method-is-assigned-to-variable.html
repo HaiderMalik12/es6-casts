@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fix this when method is assigned to variable</title>
+</head>
+
+<body>
+    <script>
+        var user = {
+            owner: 'Smith',
+            data: [{
+                firstName: 'Jane',
+                lastName: 'Doe'
+            }, {
+                firstName: 'John',
+                lastName: 'Swf'
+            }],
+            clickHandler: function () {
+                console.log(this);
+                this.data.forEach((person) => {
+                    console.log(`${person.firstName} ${this.owner}`)
+                })
+            }
+        }
+        const userHandler = user.clickHandler;
+        userHandler.bind(user)();
+    </script>
+</body>
+
+</html>

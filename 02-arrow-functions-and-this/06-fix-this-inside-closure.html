@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fix this inside closure</title>
+</head>
+
+<body>
+    <script>
+        var user = {
+            owner: 'Smith',
+            data: [{
+                firstName: 'Jane',
+                lastName: 'Doe'
+            },{
+                firstName: 'John',
+                lastName: 'Swf'
+            }],
+            clickHandler: function () {
+                this.data.forEach(person=> {
+                     console.log(this);
+                    console.log(`${person.firstName} ${this.owner}`)
+                })
+            }
+        }
+        user.clickHandler()
+
+        let test  =() =>{
+            console.log(this);
+        }
+        // test();
+
+        let Person = {
+            name: 'malik',
+            logName:function(){
+                setTimeout(() =>{
+                 console.log(this.name);
+                },1000);
+            }
+        }
+        Person.logName();
+    </script>
+</body>
+
+</html>

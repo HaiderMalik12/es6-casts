@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Async/Await</title>
+</head>
+
+<body>
+    <script>
+        async function start() {
+            const p1 = fetch('https://api.github.com/users/haidermalik12');
+            const p2 = fetch('https://api.github.com/users/stolinski');
+
+            const res = await Promise.all([p1,p2]);
+            debugger;
+            const dataPromises = res.map(data =>  data.json());
+            const [h, s] = await Promise.all(dataPromises);
+            console.log(h);
+            console.log(s)
+
+        }
+
+        start()
+        .catch(err => {
+            console.error(err);
+        })
+
+
+    </script>
+</body>
+
+</html>

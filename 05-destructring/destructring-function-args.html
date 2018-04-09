@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Destructring</title>
+</head>
+
+<body>
+
+    <script>
+        function getPersons({total = 0, page, perPage, query, sort, sortDir}) {
+            return {
+                persons: [{ firstName: 'Jane' }],
+                total: 1,
+                page,
+                perPage
+            }
+        }
+        const persons = getPersons({
+            total: 0,
+            perPage: 10,
+            query: 'id',
+            sort: 'ASC',
+            sort: 'id',
+            page: 1,
+        }
+        )
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Es6 Classes</title>
+</head>
+
+<body>
+    <script>
+     class Person{
+         constructor(name, age){
+             this.name = name;
+             this.age= age;
+         }
+         greet(){
+             return `Hello ${this.name}`;
+         }
+         static info(){
+             return 'Information'
+         }
+         get getName(){
+             return this.name
+         }
+         set setName(value){
+             this.name = value;
+         }
+         get getAge(){
+             return this.age;
+         }
+         set setAge(value){
+             this.age = value
+         }
+     }
+
+     const haider = new Person('Haider', 23);
+     const john = new Person('John', 12);
+    </script>
+</body>
+
+</html>

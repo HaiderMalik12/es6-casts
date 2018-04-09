@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fix this when used in a method passed as a callback</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+    <button>Click me</div>
+    <script>
+        var user = {
+            firstName: 'Jane',
+            lastName: 'Doe',
+            clickHandler: function (event) {
+                console.log(this.firstName + " " + this.lastName);
+            }
+        }
+        $("button").click(user.clickHandler.bind(user));
+    </script>
+</body>
+
+</html>

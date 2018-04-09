@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Async/Await</title>
+</head>
+
+<body>
+    <script>
+        function greet(ms) {
+            return new Promise((resolve, reject) => {
+                if (ms < 500) {
+                    reject('Value must be greater than 500');
+                }
+                setTimeout(() => resolve(`Done for ${ms} ms`), ms);
+            });
+        }
+        async function start() {
+            try {
+                const res1 = await greet(1000);
+                console.log(res1);
+
+                const res2 = await greet(1200);
+                console.log(res2);
+
+                const res3 = await greet(1300);
+                console.log(res3);
+
+                const res4 = await greet(1500);
+                console.log(res4);
+
+                return {
+                    msg: 'Completed successfullY!'
+                }
+            }
+            catch (err) {
+                throw err;
+            }
+        }
+        start()
+            .then((res) => { console.log(res) })
+            .catch(err => {
+                console.error(err);
+            })
+
+
+
+    </script>
+</body>
+
+</html>

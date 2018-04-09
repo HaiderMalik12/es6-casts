@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ES6 Classes</title>
+</head>
+
+<body>
+    <script>
+
+        class SongsCollection extends Array {
+            constructor(name, ...songs){
+                super(...songs);
+                this.name = name;
+            }
+            addSong(song){
+                this.push(song);
+            }
+        }
+        const songs = new SongsCollection('John Fav Songs',
+            {
+                id: 1,
+                name: 'All of me'
+            }, {
+                id: 2,
+                name: 'Animals'
+            })
+
+         for(let s of songs){
+             console.log(s);
+         }
+
+         for(let s in songs){
+             console.log(s);
+         }
+    </script>
+</body>
+
+</html>

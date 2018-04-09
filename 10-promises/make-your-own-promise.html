@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Promises</title>
+</head>
+
+<body>
+    <script>
+        const p = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('Welcome to ES6 Course')
+            }, 1000)
+        })
+
+        p.then(data => console.log(data))
+            .catch(err => console.error(err));
+
+    </script>
+</body>
+
+</html>

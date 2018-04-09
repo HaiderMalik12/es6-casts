@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Arrays in ES6</title>
+</head>
+
+<body>
+    <div class="person">
+       <p>Jane</p>
+       <p>Doe</p>
+       <p>Smith</p>
+    </div>
+    <script>
+     function sum(){
+     const nums = Array.from(arguments);
+     console.log(nums);
+     }
+     sum(1,2,43,455);
+
+
+     const persons = document.querySelectorAll('.person p');
+     const personsArray = Array.from(persons,(p) => {
+         return p.textContent;
+     });
+
+     const fruits = Array.of('Apple','Oranges','dagshd','askdhkahds')
+
+
+    </script>
+</body>
+
+</html>

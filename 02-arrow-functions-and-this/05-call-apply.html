@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>call, apply or bind</title>
+</head>
+
+<body>
+    <script>
+        function add(c, d) {
+            console.log(this.a + this.b + c + d);
+        }
+        var numberObj = {
+            a: 1,
+            b:2
+        };
+        add.call(numberObj, 1, 2);
+        add.apply(numberObj,[1,2]);
+        const addBoundFunc = add.bind(numberObj);
+        addBoundFunc(1,2);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Proxies</title>
+</head>
+
+<body>
+    <script>
+
+        function makeSingleton(func) {
+            let instance;
+            let handler = {
+                construct(target, args) {
+                    if (!instance) {
+                        instance = new func();
+                    }
+                    return instance;
+                }
+            };
+            return new Proxy(func, handler);
+        }
+
+        function Counter() {
+            this.value = 0;
+        }
+        const c1 = new Counter();
+        const c2 = new Counter();
+
+        const SingletonCounter = makeSingleton(Counter);
+          s1 = new SingletonCounter();
+          s1.value = 123;
+          console.log(s1.value);
+          s2 = new SingletonCounter();
+
+
+
+    </script>
+</body>
+
+</html>
